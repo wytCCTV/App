@@ -1,0 +1,13 @@
+<resources>
+
+    <string-array name="led_speeds">
+        <item>风扇</item>
+        <item>照明灯</item>
+        <item>窗帘</item>
+    </string-array>
+
+    <string-array name="led_stuts">
+        <item>开启</item>
+        <item>关闭</item>
+    </string-array>
+</resources>

@@ -1,0 +1,739 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:background="@drawable/login6">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp"
+        tools:context=".DeviceControlActivity">
+
+        <!-- 这里放置您原来的所有内容，保持不变 -->
+        <!-- 标题区域 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:paddingBottom="16dp">
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="宠物喂食"
+                android:textSize="28sp"
+                android:textStyle="bold"
+                android:textColor="@color/primary_dark"
+                android:layout_marginStart="12dp" />
+        </LinearLayout>
+
+    <!-- 传感器数据卡片 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:background="#CCFFFFFF"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:padding="12dp">
+
+            <TextView
+                android:id="@+id/selectedAnimalText"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="当前动物：猫咪"
+                android:textColor="@color/primary_dark"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/selectAnimalButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:backgroundTint="#6bd669"
+                android:text="选择动物" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/HumiStatus"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="3dp"
+                    android:text="温度："
+                    android:textSize="20sp"
+                    android:textStyle="bold"/>
+
+                <TextView
+                    android:id="@+id/textViewTemp"
+                    android:layout_width="70dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginEnd="10dp"
+
+                    android:gravity="center_vertical"
+                    android:text="未知"
+
+                    android:textSize="20sp"
+                    android:typeface="monospace"
+                    tools:ignore="RtlCompat" />
+                <TextView
+                    android:id="@+id/LightStatus3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginEnd="3dp"
+                    android:text="水位："
+                    android:textSize="20sp"
+                    android:textStyle="bold"/>
+
+                <TextView
+                    android:id="@+id/Sw"
+                    android:layout_width="70dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="10dp"
+                    android:gravity="center_vertical"
+                    android:text="未知"
+                    android:textSize="20sp"
+
+                    android:typeface="monospace"
+                    tools:ignore="RtlCompat" />
+
+            </LinearLayout>
+
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+
+
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/yhqStatus3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginEnd="3dp"
+                    android:text="食物重量："
+                    android:textSize="20sp"
+                    android:textStyle="bold"/>
+
+                <TextView
+                    android:id="@+id/Goods"
+                    android:layout_width="70dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="10dp"
+                    android:gravity="center_vertical"
+                    android:text="未知"
+                    android:textSize="20sp"
+
+                    android:typeface="monospace"
+                    tools:ignore="RtlCompat" />
+
+                <TextView
+                    android:id="@+id/textView44"
+                    android:layout_width="90dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:text="加热状态"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/Fan"
+                    android:layout_width="71dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:text="关"
+                    android:textSize="20sp" />
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:id="@+id/linearLayoutHy"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:layout_marginTop="5sp">
+
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/linearLayoutWater12"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:layout_marginTop="5sp">
+
+                <TextView
+                    android:id="@+id/textView50"
+                    android:layout_width="90dp"
+                    android:layout_height="match_parent"
+                    android:text="水泵状态"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/Water1"
+                    android:layout_width="51dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:text="关"
+                    android:textSize="20sp" />
+
+
+                <TextView
+                    android:id="@+id/textView54"
+                    android:layout_width="90dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="0dp"
+                    android:text="报警状态"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/Warning"
+                    android:layout_width="101dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:text="关"
+                    android:textSize="20sp" />
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/linearLayoutWater"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:layout_marginTop="5sp">
+
+            </LinearLayout>
+
+
+
+
+        </LinearLayout>
+
+    <!-- 阈值设置卡片 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="20dp"
+                android:gravity="center">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="投喂时间1："
+                    android:textStyle="bold"
+                    android:textSize="21sp"
+                    />
+
+                <EditText
+                    android:id="@+id/hourInput"
+                    android:layout_width="60dp"
+                    android:layout_height="40dp"
+                    android:hint="时"
+                    android:inputType="number"
+                    android:maxLines="1"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginEnd="4dp"
+                    android:width="40dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=":"
+                    android:textSize="30sp"/>
+
+                <EditText
+                    android:id="@+id/minuteInput"
+                    android:layout_width="60dp"
+                    android:layout_height="40dp"
+                    android:hint="分"
+                    android:inputType="number"
+                    android:maxLines="1"
+
+                    android:layout_marginStart="4dp"
+                    android:layout_marginEnd="4dp"
+                    android:width="40dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=":"
+
+                    android:textSize="20sp"/>
+
+                <EditText
+                    android:id="@+id/secondInput"
+                    android:layout_width="60dp"
+                    android:layout_height="40dp"
+                    android:hint="秒"
+                    android:inputType="number"
+                    android:maxLines="1"
+                    android:layout_marginStart="4dp"
+                    android:layout_marginEnd="4dp"
+                    android:width="40dp"/>
+
+            </LinearLayout>
+
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textStyle="bold"
+                    android:text="投喂时间2："
+                    android:textSize="21sp"  />
+
+                <EditText
+                    android:id="@+id/hourEnd"
+                    android:layout_width="60dp"
+                    android:layout_height="40dp"
+                    android:hint="时"
+                    android:inputType="number"
+                    android:maxLines="1"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginEnd="4dp"
+                    android:width="40dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=":"
+                    android:textSize="30sp"/>
+
+                <EditText
+                    android:id="@+id/minuteEnd"
+                    android:layout_width="60dp"
+                    android:layout_height="40dp"
+                    android:hint="分"
+                    android:inputType="number"
+                    android:maxLines="1"
+
+                    android:layout_marginStart="4dp"
+                    android:layout_marginEnd="4dp"
+                    android:width="40dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=":"
+
+                    android:textSize="20sp"/>
+
+                <EditText
+                    android:id="@+id/secondEnd"
+                    android:layout_width="60dp"
+                    android:layout_height="40dp"
+                    android:hint="秒"
+                    android:inputType="number"
+                    android:maxLines="1"
+                    android:layout_marginStart="4dp"
+                    android:layout_marginEnd="4dp"
+                    android:width="40dp"/>
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textStyle="bold"
+                    android:text="投喂时间3："
+                    android:textSize="21sp"  />
+
+                <EditText
+                    android:id="@+id/hour3"
+                    android:layout_width="60dp"
+                    android:layout_height="40dp"
+                    android:hint="时"
+                    android:inputType="number"
+                    android:maxLines="1"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginEnd="4dp"
+                    android:width="40dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=":"
+                    android:textSize="30sp"/>
+
+                <EditText
+                    android:id="@+id/minute3"
+                    android:layout_width="60dp"
+                    android:layout_height="40dp"
+                    android:hint="分"
+                    android:inputType="number"
+                    android:maxLines="1"
+
+                    android:layout_marginStart="4dp"
+                    android:layout_marginEnd="4dp"
+                    android:width="40dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=":"
+
+                    android:textSize="20sp"/>
+
+                <EditText
+                    android:id="@+id/second3"
+                    android:layout_width="60dp"
+                    android:layout_height="40dp"
+                    android:hint="秒"
+                    android:inputType="number"
+                    android:maxLines="1"
+                    android:layout_marginStart="4dp"
+                    android:layout_marginEnd="4dp"
+                    android:width="40dp"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+           android:layout_marginStart="20dp"
+                >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="温度最小值："
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:id="@+id/Tempmax"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/selector_input"
+                    android:hint="请输入数据"
+                    android:inputType="text" />
+            </LinearLayout>
+
+
+
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="水位最大值："
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:id="@+id/Swmax"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/selector_input"
+                    android:hint="请输入数值"
+                    android:inputType="text" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="水位最小值："
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:id="@+id/Swmin"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/selector_input"
+                    android:hint="请输入数值"
+                    android:inputType="text" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="重量最小值："
+
+                    android:textSize="20sp"
+                    android:textStyle="bold"/>
+
+                <EditText
+                    android:id="@+id/Goodsweightmin"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/selector_input"
+                    android:hint="请输入数值"
+                    android:inputType="text" />
+            </LinearLayout>
+
+
+
+
+        </LinearLayout>
+
+    <!-- 设备控制卡片 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:orientation="vertical">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="0dp"
+                android:orientation="horizontal"
+                android:layout_marginTop="1sp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="水泵开关："
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:layout_marginStart="16dp"
+                    />
+
+                <ToggleButton
+                    android:id="@+id/WaterToggle"
+                    android:layout_width="60dp"
+                    android:layout_height="30dp"
+                    android:textOn="关闭"
+                    android:textOff="开启"
+                    android:checked="true"
+                    android:background="@drawable/toggle_button_background"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="0dp"
+                android:orientation="horizontal"
+                android:layout_marginTop="1sp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="喂食开关："
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:layout_marginStart="16dp"
+                    />
+
+                <ToggleButton
+                    android:id="@+id/LedToggle"
+                    android:layout_width="60dp"
+                    android:layout_height="30dp"
+                    android:textOn="关闭"
+                    android:textOff="开启"
+                    android:checked="true"
+                    android:background="@drawable/toggle_button_background"/>
+            </LinearLayout>
+
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="0dp"
+                android:orientation="horizontal"
+                android:layout_marginTop="1sp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="加热开关："
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:layout_marginStart="16dp"
+                    />
+
+                <ToggleButton
+                    android:id="@+id/HeaterToggle"
+                    android:layout_width="60dp"
+                    android:layout_height="30dp"
+                    android:textOn="关闭"
+                    android:textOff="开启"
+                    android:checked="true"
+                    android:background="@drawable/toggle_button_background"/>
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="10dp"
+            >
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="工作模式"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="@color/primary_dark"
+                android:drawablePadding="8dp"
+                android:paddingBottom="12dp" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/divider_color" />
+            <RadioGroup
+                android:id="@+id/radio_group"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                >
+
+                <RadioButton
+                    android:id="@+id/radio_off"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:checked="true"
+                    android:text="主界面"
+                    android:textSize="16sp" />
+
+                <RadioButton
+                    android:id="@+id/radio_low1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="时间"
+                    android:textSize="16sp" />
+
+                <RadioButton
+                    android:id="@+id/radio_low"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="阈值"
+                    android:textSize="16sp" />
+
+                <RadioButton
+                    android:id="@+id/radio_low2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="设备控制"
+                    android:textSize="16sp" />
+
+            </RadioGroup>
+
+        </LinearLayout>
+
+    <!-- 操作按钮区域 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:padding="8dp">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/SendSetData"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:layout_weight="1"
+                android:onClick="onSendButtonClicked"
+                android:text="发送"
+                android:backgroundTint="#6bd669"
+                app:iconGravity="textStart"
+                app:iconPadding="8dp" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/connectButton"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginEnd="8dp"
+                android:onClick="onConnectButtonClicked"
+                android:backgroundTint="#6bd669"
+                android:text="连接"
+                app:iconPadding="8dp"/>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/butExit"
+                android:layout_width="0dp"
+                android:backgroundTint="#6bd669"
+                android:layout_height="wrap_content"
+                android:onClick="onExitClicked"
+                android:layout_weight="1"
+                android:text="返回"
+                app:iconPadding="8dp"/>
+        </LinearLayout>
+
+</LinearLayout>
+</ScrollView>
