@@ -4,6 +4,8 @@ package com.example.application_demo;
 import android.annotation.SuppressLint;
 import android.app.AlertDialog;
 import android.content.Context;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.IBinder;
@@ -34,6 +36,7 @@ import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 import java.io.PrintWriter;
 import java.net.Socket;
+import java.util.Locale;
 
 public class DeviceControlActivity extends AppCompatActivity {
     private static final String TAG = DeviceControlActivity.class.getSimpleName();
@@ -62,7 +65,9 @@ public class DeviceControlActivity extends AppCompatActivity {
     private EditText  second3  ;
     private EditText minute3;
     private EditText hour3;
+    private EditText petWeightInput;
     private TextView selectedAnimalText;
+    private TextView feedingAmountText;
     private String selectedAnimal = "猫咪";
     private int statusCode1 = 0;
     private int statusCode2 = 0;
@@ -96,10 +101,13 @@ public class DeviceControlActivity extends AppCompatActivity {
         hour3 = findViewById(R.id.hour3);
         minute3 = findViewById(R.id.minute3);
         second3 = findViewById(R.id.second3);
+        petWeightInput = findViewById(R.id.petWeightInput);
         selectedAnimalText = findViewById(R.id.selectedAnimalText);
+        feedingAmountText = findViewById(R.id.feedingAmountText);
 
         Button selectAnimalButton = findViewById(R.id.selectAnimalButton);
         updateSelectedAnimalText();
+        bindPetWeightCalculator();
         selectAnimalButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -197,6 +205,7 @@ public class DeviceControlActivity extends AppCompatActivity {
                 .setSingleChoiceItems(animalOptions, checkedItem, (dialog, which) -> {
                     selectedAnimal = animalOptions[which];
                     updateSelectedAnimalText();
+                    updateFeedingAmountDisplay();
                     Toast.makeText(DeviceControlActivity.this, "已选择：" + selectedAnimal, Toast.LENGTH_SHORT).show();
                     dialog.dismiss();
                 })
@@ -206,6 +215,61 @@ public class DeviceControlActivity extends AppCompatActivity {
 
     private void updateSelectedAnimalText() {
         selectedAnimalText.setText("当前动物：" + selectedAnimal);
+    }
+
+    private void bindPetWeightCalculator() {
+        petWeightInput.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                updateFeedingAmountDisplay();
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+            }
+        });
+    }
+
+    private void updateFeedingAmountDisplay() {
+        if (petWeightInput == null || feedingAmountText == null) {
+            return;
+        }
+
+        String weightText = petWeightInput.getText().toString().trim();
+        if (weightText.isEmpty()) {
+            feedingAmountText.setText("推荐投喂量：--");
+            return;
+        }
+
+        try {
+            double weight = Double.parseDouble(weightText);
+            if (weight <= 0) {
+                feedingAmountText.setText("推荐投喂量：请输入大于 0 的重量");
+                return;
+            }
+
+            double feedingAmount = weight * getFeedingRatioByAnimal();
+            feedingAmountText.setText(String.format(Locale.getDefault(), "推荐投喂量：%.1f g/天", feedingAmount));
+        } catch (NumberFormatException e) {
+            feedingAmountText.setText("推荐投喂量：请输入有效数字");
+        }
+    }
+
+    private double getFeedingRatioByAnimal() {
+        if ("狗狗".equals(selectedAnimal) || "鐙楃嫍".equals(selectedAnimal)) {
+            return 30.0;
+        }
+        if ("兔子".equals(selectedAnimal) || "鍏斿瓙".equals(selectedAnimal)) {
+            return 50.0;
+        }
+        if ("仓鼠".equals(selectedAnimal) || "浠撻紶".equals(selectedAnimal)) {
+            return 15.0;
+        }
+        return 40.0;
     }
 
 
